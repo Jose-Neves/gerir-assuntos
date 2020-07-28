@@ -1,0 +1,42 @@
+dbname=bigbizzpdo
++-----------------------------------------------------------------------------+
+
+table: users
+id_user int(11) AUTO_INCREMENT PRIMARY KEY,
+nome varchar(30) NOT NULL,
+passwd varchar (250),
+mudapasswd boolean,
+passwddata varchar(14),
+saidas char,
+assuntos char
+
+mudapasswd: se '1' o utilizador qd entrar tem que mudar a password
+
+saidas e assuntos
+niveis de acesso
+0 - tem acesso total ao próprio e ver os outros
+1 - tem acesso total a tudo.
++-----------------------------------------------------------------------------+
+
+table: saidas
+id_saida int(11) AUTO_INCREMENT PRIMARY KEY
+dataHoraIns_sd varchar(14)
+datahora_sd varchar(14)
+morada_sd varchar(250)
+observ_sd varchar(250)
+marcadoPor_sd varchar(30)
+apagada_sd char(1) 0-não 1-sim
++-----------------------------------------------------------------------------+
+
+table: assuntos
+id_assunto int(11) AUTO_INCREMENT PRIMARY KEY
+assunto_as varchar(250)
+datahora_as varchar(14)
+marcadoPor_as varchar(30)
+aberto_as char
++-----------------------------------------------------------------------------+
+
+table: linhas
+id_linha int(11) AUTO_INCREMENT PRIMARY KEY
+assunto_ln int(11)
+linhatxt_ln varchar(250) NOT NULL

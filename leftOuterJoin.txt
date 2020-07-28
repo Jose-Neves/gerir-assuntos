@@ -1,0 +1,44 @@
+﻿SELECT customers.name, items.name
+FROM customers LEFT OUTER JOIN items 
+ON customers.id=seller_id
+
+lista todos os registos da tabela customers
+mesmo os que não têm registo correspondente na tabela items.
+
+https://www.youtube.com/watch?v=cXQOSQo_RDI
+MySQL Database Tutorial - 23 - Outer Joins
+
+
+SELECT assuntos.id_assunto, assuntos.assunto_as, assuntos.datahora_as, 
+assuntos.marcadoPor_as, assuntos.aberto_as, linhas.linhatxt_ln 
+FROM assuntos 
+INNER JOIN linhas ON 
+assuntos.id_assunto=linhas.assunto_ln
+
+1234567890123456789012345678901234567890123456789012345678901234567890
+SELECT assuntos.id_assunto, assuntos.assunto_as, assuntos.datahora_as, 
+assuntos.marcadoPor_as, assuntos.aberto_as, 
+( 
+	SELECT linhas.linhatxt_ln 
+	FROM linhas 
+	WHERE assuntos.id_assunto=linhas.assunto_ln 
+    ORDER BY linhas.linhatxt_ln DESC
+	LIMIT 1 
+) as linhaTexto
+FROM assuntos
+1234567890123456789012345678901234567890123456789012345678901234567890
+
+$con = mysqli_connect($host, $user, $password, $dbname);
+
+if (!$con) {
+	die("Connection failed: ". mysqli_connect_error());
+	}
+	
+$query = "insert into users(Username,fname,lname)
+	values('username','fname','lname')";
+
+mysqli_query($con,$query);
+
+$lastid=mysqli_insert_id($con);
+
+echo "last id: ".$lastid;

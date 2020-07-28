@@ -1,0 +1,11 @@
+
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
+        }
+    } );
+} );
+In addition to the above code, the following Javascript library files are loaded for use in this example:
+https://code.jquery.com/jquery-3.3.1.js 
+https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js
